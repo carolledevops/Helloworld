@@ -31,18 +31,18 @@ variable machine_type {
 
 
 variable address_name { 
-    type = string 
-    default = "hello-ip"
+    type = list(any)
+    default = ["jenkins", "sonar", "nexus"]
 }
 
 variable instance_name { 
-    type = string 
-    default = "jenkins"
+    type = list(any)
+    default = ["jenkins", "sonarqube", "nexus"]
 }
 
 variable image { 
-    type = string 
-    default = "helloworld-391505/jenkins"
+    type = list(any)
+    default = ["helloworld-391505/jenkins", "centos-cloud/centos-7"]
 }
 
 variable subnet_name { 
