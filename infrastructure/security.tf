@@ -30,7 +30,7 @@ resource "google_compute_firewall" "hello-allow-internet" {
   
   allow {
     protocol = "tcp"
-    ports    = ["80", "8080", "9000", "8081"]
+    ports    = ["80", "8080"]
   }
 
   source_ranges = ["0.0.0.0/0"]

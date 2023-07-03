@@ -3,26 +3,17 @@ data "google_compute_zones" "available" {
 }
 
 resource "google_compute_address" "jenkins" {
-  name = var.address_name[0]
+  name = var.address_name
 }
-
-resource "google_compute_address" "sonar" {
-  name = var.address_name[1]
-}
-
-resource "google_compute_address" "nexus" {
-  name = var.address_name[2]
-}
-
 
 resource "google_compute_instance" "hello_vm0" {
-  name         = var.instance_name[0]
+  name         = var.instance_name
   machine_type = var.machine_type
   zone = var.zone
 
   boot_disk {
     initialize_params {
-      image = var.image[0]
+      image = var.image
     }
   }
 
@@ -34,43 +25,8 @@ resource "google_compute_instance" "hello_vm0" {
   }
 }
 
-resource "google_compute_instance" "hello_vm1" {
-  name         = var.instance_name[1]
-  machine_type = var.machine_type
-  zone = var.zone
 
-  boot_disk {
-    initialize_params {
-      image = var.image[1]
-    }
-  }
 
-  network_interface {
-    subnetwork = google_compute_subnetwork.hello_subnet.id
-    access_config {
-      nat_ip = google_compute_address.sonar.address
-    }
-  }
-}
-
-resource "google_compute_instance" "hello_vm2" {
-  name         = var.instance_name[2]
-  machine_type = var.machine_type
-  zone = var.zone
-
-  boot_disk {
-    initialize_params {
-      image = var.image[1]
-    }
-  }
-
-  network_interface {
-    subnetwork = google_compute_subnetwork.hello_subnet.id
-    access_config {
-      nat_ip = google_compute_address.nexus.address
-    }
-  }
-}
 
 
 
