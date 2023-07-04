@@ -36,13 +36,13 @@ variable address_name {
 }
 
 variable instance_name { 
-    type = string
-    default = "jenkins"
+    type = list(any)
+    default = ["jenkins", "nodebuild"]
 }
 
 variable image { 
-    type = string
-    default = "helloworld-391505/jenkins"
+    type = list(any)
+    default = ["helloworld-391505/jenkins", "centos-cloud/centos-7"]
 }
 
 variable subnet_name { 
