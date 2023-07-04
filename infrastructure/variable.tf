@@ -31,17 +31,17 @@ variable machine_type {
 
 
 variable address_name { 
-    type = string 
-    default = "hello-ip"
+    type = string
+    default = "jenkins"
 }
 
 variable instance_name { 
-    type = string 
+    type = string
     default = "jenkins"
 }
 
 variable image { 
-    type = string 
+    type = string
     default = "helloworld-391505/jenkins"
 }
 
