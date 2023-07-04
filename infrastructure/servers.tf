@@ -5,13 +5,13 @@ resource "google_compute_address" "jenkins" {
 
 
 resource "google_compute_instance" "hello_vm" {
-  name         = var.instance_name
+  name         = var.instance_name[0]
   machine_type = var.machine_type
   zone = var.zone
 
   boot_disk {
     initialize_params {
-      image = var.image
+      image = var.image[0]
     }
   }
 
@@ -24,13 +24,13 @@ resource "google_compute_instance" "hello_vm" {
 }
 
 resource "google_compute_instance" "hello_node" {
-  name         = var.instance_name
+  name         = var.instance_name[1]
   machine_type = var.machine_type
   zone = var.zone
 
   boot_disk {
     initialize_params {
-      image = var.image
+      image = var.image[1]
     }
   }
 
