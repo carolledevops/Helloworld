@@ -1,8 +1,8 @@
  Deployment hello world application
  
 1. Context
-•	Deployment of hello world application through the CI / CD
-•	Implementation of the security aspect
+##Deployment of hello world application through the CI / CD
+#Implementation of the security aspect
 
 3. Tools
    
