@@ -6,7 +6,7 @@ pipeline {
        DOCKERHUB_ID = "carolledevops"
        IMAGE_NAME = "helloworld"
        IMAGE_TAG = "v1"  
-       CONTAINER_PORT = "8080"
+       CONTAINER_PORT = "8081"
        DOCKERHUB = credentials('dockerhub')
        HOST_PORT = "80"
      }
