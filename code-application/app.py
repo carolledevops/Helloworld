@@ -1,38 +1,42 @@
-import os
-from flask import Flask
-from flask import render_template
-import socket
-import random
-import os
+from flask import Flask, render_template_string
+import sqlite3
 
 app = Flask(__name__)
 
-color_codes = {
-    "red": "#e74c3c",
-    "green": "#16a085",
-    "blue": "#2980b9",
-    "blue2": "#30336b",
-    "pink": "#be2edd",
-    "darkblue": "#130f40"
-}
+@app.route('/')
+def hello():
+    conn = sqlite3.connect('hello.db')
+    c = conn.cursor()
+    c.execute('CREATE TABLE IF NOT EXISTS greetings (message text)')
+    c.execute('INSERT INTO greetings VALUES ("Hello World")')
+    conn.commit()
+    c.execute('SELECT message FROM greetings')
+    result = c.fetchone()
+    conn.close()
 
-color = os.environ.get('APP_COLOR') or random.choice(["red","green","blue","blue2","darkblue","pink"])
+    
+    html = f"""
+    <html>
+    <head>
+        <style>
+            body {{
+                background-color: #16a085;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }}
+            h1 {{
+                color: #be2edd;
+                margin-top: 100px;
+            }}
+        </style>
+    </head>
+    <body>
+        <h1>{result[0]}</h1>
+    </body>
+    </html>
+    """
 
-@app.route("/")
-def main():
-    #return 'Hello'
-    print(color)
-    return render_template('hello.html', name=socket.gethostname(), color=color_codes[color])
+    return render_template_string(html)
 
-@app.route('/color/<new_color>')
-def new_color(new_color):
-    return render_template('hello.html', name=socket.gethostname(), color=color_codes[new_color])
-
-@app.route('/read_file')
-def read_file():
-    f = open("/data/testfile.txt")
-    contents = f.read()
-    return render_template('hello.html', name=socket.gethostname(), contents=contents, color=color_codes[color])
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port="8081")
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
