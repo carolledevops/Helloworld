@@ -12,7 +12,7 @@ provider "google" {
   project     = var.project
   region      = var.region
   zone        = var.zone
-  credentials = file()
+  credentials = file(path_key_secret_account)
 }
 
 provider "kubernetes" {
@@ -26,6 +26,6 @@ terraform {
   backend "gcs" {
     bucket      = "terraform3-lock"
     prefix      = "infras/tfstate"
-    credentials = file()
+    credentials = file(path_key_secret_account)
   }
 }
