@@ -1,9 +1,11 @@
-FROM ubuntu:18.04
+FROM python:3.9-slim
 
-RUN apt-get update && apt-get install -y python python-pip
+WORKDIR /app
 
-RUN pip install flask
+COPY requirements.txt .
 
-COPY . /opt/
+RUN pip install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT FLASK_APP=/opt/app.py FLASK_RUN_PORT=8081 flask run --host=0.0.0.0
+COPY app.py .
+
+CMD ["python", "app.py"]
