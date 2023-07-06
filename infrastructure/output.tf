@@ -17,3 +17,4 @@ output "host" {
   value     = google_container_cluster.primary.endpoint
   sensitive = true
 }
+
