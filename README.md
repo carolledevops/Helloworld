@@ -34,7 +34,11 @@
 ##### 	Use notification space on the Slack collaborative platform and email to notify us of the state of the pipeline.
 ## Security:
 ##### Snyk Image Scanner:
-###### Identify vulnerabilities in built images
+###### Identify vulnerabilities in built images (cve-
+##### Sonarqube for code quality
+       
+        
+  
 
 ## Workflow
 #####   Continuous Integration and delivery
