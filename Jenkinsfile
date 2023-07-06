@@ -10,7 +10,7 @@ pipeline {
        DOCKERHUB = credentials('dockerhub')
        HOST_PORT = "80"
      }
-    stages {
+  stages {
       stage('login to docker repository') {
        when {
           expression { GIT_BRANCH == 'origin/dev' }
@@ -22,6 +22,9 @@ pipeline {
           }
       }
       stage('SonarQube analysis') {
+        when {
+          expression { GIT_BRANCH == 'origin/dev' }
+        }
             agent {
                 docker {
                   image 'sonarsource/sonar-scanner-cli:4.7.0'
@@ -63,7 +66,7 @@ pipeline {
         }
     }
     
-   stage('Run container based on builded image') {
+    stage('Run container based on builded image') {
       when {
           expression { GIT_BRANCH == 'origin/dev' }
         }
@@ -90,7 +93,7 @@ pipeline {
               }
            }
       }
-      stage('Clean Container') {
+    stage('Clean Container') {
           when {
           expression { GIT_BRANCH == 'origin/dev' }
              }
@@ -103,7 +106,7 @@ pipeline {
              }
           }
      }
-  stage('push docker image') {
+    stage('push docker image') {
      when {
           expression { GIT_BRANCH == 'origin/dev' }
         }
@@ -118,66 +121,23 @@ pipeline {
           expression { GIT_BRANCH == 'origin/dev' }
             }
             steps {
-	        script {
-	          withCredentials([
-	            string(credentialsId: 'Githubtoken', variable: 'TOKEN')
-	          ]) {
-
-	            sh '''
-                  rm -rf helm-chart || true 
-                  git clone https://carolledevops:$TOKEN@github.com/carolledevops/helm-chart.git
-                  cd helm-chart
-      cat << EOF > test-values.yaml
-         repository:
-         tag:   hello-$IMAGE_TAG
-         assets:
-          image: carolledevops/helloworld
-  EOF
-  git config --global user.name "carolledevops"
-  git config --global user.email "carolledevops@yahoo.com"
-   cat  test-values.yaml
-   git add -A 
-    git commit -m "Change from JENKINS" 
-    git push  https://carolledevops:$TOKEN@github.com/carolledevops/helm-chart.git
-	  '''
-	          }
-
-	        }
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'gke_credential', namespace: '', serverUrl: '') {
+                 sh "kubectl apply -f deployment.yml"
+                }
+            }
+        }
+	     }
       }
-    }
-stage("Deploy app in production Environment") {
-        when {
+    stage("Deploy app in production Environment") {
+       when {
           expression { GIT_BRANCH == 'origin/main' }
             }
             steps {
-	        script {
-	          withCredentials([
-	            string(credentialsId: 'Githubtoken', variable: 'TOKEN')
-	          ]) {
-
-	            sh '''
-                  rm -rf helm-chart || true 
-                  git clone https://carolledevops:$TOKEN@github.com/carolledevops/helm-chart.git
-                  cd helm-chart
-      cat << EOF > prod-values.yaml
-         repository:
-         tag:   hello-$IMAGE_TAG
-         assets:
-          image: carolledevops/helloworld
-  EOF
-  git config --global user.name "carolledevops"
-  git config --global user.email "carolledevops@yahoo.com"
-   cat  prod-values.yaml
-   git add -A 
-    git commit -m "Change from JENKINS" 
-    git push  https://carolledevops:$TOKEN@github.com/carolledevops/helm-chart.git
-	            '''
-	          }
-
-	        }
-        }
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'gke_credential', namespace: '', serverUrl: '') {
+                 sh "kubectl apply -f deployment.yml"
+                }
+            }
+          }
     }
-  }
-}
-}
-
+   
+ 
