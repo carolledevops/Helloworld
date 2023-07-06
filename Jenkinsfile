@@ -11,6 +11,32 @@ pipeline {
        HOST_PORT = "80"
      }
     stages {
+      stage('login to docker repository') {
+       when {
+          expression { GIT_BRANCH == 'origin/dev' }
+        }
+          steps {
+             script {
+               sh 'echo $DOCKERHUB | docker login -u $DOCKERHUB_ID --password-stdin'
+             }
+          }
+      }
+      stage('SonarQube analysis') {
+            agent {
+                docker {
+                  image 'sonarsource/sonar-scanner-cli:4.7.0'
+                }
+               }
+               environment {
+        CI = 'true'
+        scannerHome='/opt/sonar-scanner'
+     }
+            steps{
+                withSonarQubeEnv('Sonar') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+
       stage("Build docker images") {
         when {
           expression { GIT_BRANCH == 'origin/dev' }
@@ -83,10 +109,7 @@ pipeline {
         }
           steps {
              script {
-               sh '''
-                 echo $DOCKERHUB | docker login -u $DOCKERHUB_ID --password-stdin
-                 docker push $DOCKERHUB_ID/$IMAGE_NAME:$IMAGE_TAG
-               '''
+               sh 'docker push $DOCKERHUB_ID/$IMAGE_NAME:$IMAGE_TAG '
              }
           }
      }
@@ -155,5 +178,6 @@ stage("Deploy app in production Environment") {
         }
     }
   }
+}
 }
 
