@@ -95,22 +95,28 @@ After create Gke cluster, we will use .kube/config
 
 All this creadendials(token, kube/config, service account, private key)  will provide to jenkins to authenticate to sonarqube to analyse the code, github clone private repository, slack to notify the team, snyk to scan docker images, dockerhub to store docker images, gcp and gke to deploy hello world application.
 provide all that credentials: go to manage plugins- manage credentials
-Manage pludins
+Manage jenkins
 ![Screenshot (350)](https://github.com/carolledevops/Helloworld/assets/138341326/cc26a74c-dbd8-4da6-a30a-6c813c6e5cc7)
+
 Click on manage credentials
 
 ![Screenshot (351)](https://github.com/carolledevops/Helloworld/assets/138341326/6113de12-4947-426e-a3cc-c30d9463a178)
+
 add credentials
 
 ![Screenshot (352)](https://github.com/carolledevops/Helloworld/assets/138341326/63f4766f-1018-4c4e-af56-422920bfa703)
 
-    
+All my credentials
 ![Screenshot (349)](https://github.com/carolledevops/Helloworld/assets/138341326/de79f2ea-92d4-4431-bc06-244fd75141c3)
 
 
 
        
 ## Workflow
+CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environment have the pipeline 
+- In dev environment, we have multipipeline, I will use one pipeline
+![Screenshot (353)](https://github.com/carolledevops/Helloworld/assets/138341326/135317d6-57d2-4b5a-a134-1c9d7af84761)
+
 #####   Continuous Integration and delivery
 ###### Developer makes a modification to the code and pushes it on GitHub
 ##### Thanks to the webhook, the modification is received on the Jenkins server, and the build of the project can begin and a notification is sent to slack.
