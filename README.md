@@ -1,8 +1,8 @@
- # Deployment hello world application
+# Deployment hello world application
  
 ## Context
- ##### Deployment of hello world application through the CI / CD
- ##### Implementation of the security aspect
+ ##### Deployment hello world application through the CI / CD
+ ##### Implementation of the security 
 
 ## Tools
    
@@ -10,22 +10,23 @@
 - Container Engine: Docker
 - Source Code Management: Github
 - Scheduling: Jenkins
-- Security: Snyk
-- Deployment ArgoCD, helm
+- Security: Snyk, Sonarqube
 - Notification: Slack
 
 ## Infrastructure
 
   We wanted to reproduce an enterprise-type infrastructure with 2 servers and GKE
-##### A master server Jenkins
-##### A build server to build our docker images, tests, and security scan of images
-##### Google Kubernetes engine to deploy our web application which can be consumed of production.
-### Choice and description of tools
-### DevOps:
-##### Infrastructure deployed on the GCP cloud provider thanks to Terraform and gcloud 
-##### Using Docker to containerize hello world application 
-##### Helm chart package manager 
-##### Deployment of hello world on GKE thanks to Argocd
+### A master server Jenkins scheduling build jobs, monitor the slaves
+### A build server(slave) to build our docker images, tests, and security scan of images
+### Google Kubernetes engine to deploy our web application which can be consumed of production.
+### Sonarqube server  Static Code Analysis
+
+## Choice and description of tools
+
+### Infrastructure deployed on the GCP cloud provider thanks to Terraform and gcloud 
+### Using Docker to containerize hello world application
+### Deployment hello world on GKE thanks 
+
 ##### Implementation of a Gitflow to respect good practices. Creation of two branches:
 ##### The “master” branch which will be used only to deploy our application in production,
 ##### The “dev” branch will be used to develop the functionalities and carry out the tests.
