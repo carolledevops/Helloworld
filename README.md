@@ -29,6 +29,11 @@
    automate various stages of the software development lifecycle, including building, testing, and deploying applications
 - Using Docker to containerize hello world application
 - Dockerhub: registry to store docker imges
+- Snyk is a popular developer-first security platform that helps developers find and fix vulnerabilities in their open-source dependencies and container images.Here are 
+  some key
+    1. Dependency scanning
+    2. Container image scanning
+    3. Fix suggestions and remediation
 - GKE used to deploy hello world application
 - Slack collaborative platform used to notify us of the state of the pipeline
 - SonarQube is an open-source platform developed by SonarSource for continuous inspection of code quality. SonarQube does static code analysis, which provides a detailed 
