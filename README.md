@@ -51,11 +51,11 @@
 ## NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
 Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
 # Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
-network
+### network
 ![Screenshot (348)](https://github.com/carolledevops/Helloworld/assets/138341326/4e0b761d-b9fb-4f89-8d53-d7edd0005cd1)
-cluster gke
+### cluster gke
 ![Screenshot (346)](https://github.com/carolledevops/Helloworld/assets/138341326/f7c3df53-a58b-4d04-9f70-186976d7bce8)
-servers
+### servers
 ![Screenshot (347)](https://github.com/carolledevops/Helloworld/assets/138341326/62e645d3-5d31-4831-be5a-5ff908dc0713)
 ## Connection of tools
 
@@ -69,8 +69,10 @@ plugins that we need to integrate plugins ( sonarqube scanner, slack notificatio
 # sonarqube 
     token: account - security - generate token
 # snyk 
-   token: account setting  - generate token
+ we need to generate token: 
+ #### account setting  
 ![Screenshot (344)](https://github.com/carolledevops/Helloworld/assets/138341326/71d6f99c-b543-4b2d-a05a-c0621576968e)
+#### generate token
 ![Screenshot (345)](https://github.com/carolledevops/Helloworld/assets/138341326/fa4281a8-fbfe-4f9d-9cfe-14656d257520)
 
 # slack
