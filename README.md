@@ -119,7 +119,26 @@ we need to go in global tools configuration to set java, SonarQube Scanner and s
 
 ##### manage jenkins - global tools configuration - snyk
  ![Screenshot (358)](https://github.com/carolledevops/Helloworld/assets/138341326/06e5c005-df14-4733-9090-2006088dd829)
-Configure systems
+ 
+##### Configure systems
+we need to go in configure systems to set slack, SonarQube server
+##### manage jenkins - configur systems -sonarqube server
+![Screenshot (361)](https://github.com/carolledevops/Helloworld/assets/138341326/0396a770-7c85-4c21-8002-0c3af8144473)
+
+##### manage jenkins - configur systems - slack
+![Screenshot (362)](https://github.com/carolledevops/Helloworld/assets/138341326/c9f65adb-73a1-43ef-ae7b-0a28ec2853d2)
+
+Configure jenkins and github via webhook(webhook is a trigger that use to notifie jenkins everytime we merge PR(Pull Request)
+ Go to github - click on your repository - settings - webhook
+
+ ![Screenshot (363)](https://github.com/carolledevops/Helloworld/assets/138341326/d4c69177-1f65-472c-ada0-5b6423aab145)
+
+ click on it and choose add webhook
+ ![Screenshot (365)](https://github.com/carolledevops/Helloworld/assets/138341326/539051a0-2796-4d3a-a9e3-40f1abeae160)
+
+  On Payload URL, put "http://ip(ip for jenkins):port/github-webhook" 
+  mine is 
+  [Screenshot (364)](https://github.com/carolledevops/Helloworld/assets/138341326/63a2c8e0-e979-45b3-b4e7-185fba214345)
 
 ## Workflow
 CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environment have the pipeline 
