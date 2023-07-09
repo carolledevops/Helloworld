@@ -15,17 +15,18 @@
 
 ## Infrastructure
 
-  We wanted to reproduce an enterprise-type infrastructure with 2 servers and GKE
-### A master server Jenkins scheduling build jobs, monitor the slaves
-### A build server(slave) to build our docker images, tests, and security scan of images
-### Google Kubernetes engine to deploy our web application which can be consumed of production.
-### Sonarqube server  Static Code Analysis
+  We wanted to reproduce an enterprise-type infrastructure with 3 servers and GKE
+  
+  A master server Jenkins scheduling build jobs, monitor the slaves
+  A build server(slave) to build our docker images, tests, and security scan of images
+  Google Kubernetes engine to deploy our web application which can be consumed of production.
+  Sonarqube server  Static Code Analysis
 
 ## Choice and description of tools
 
-### Infrastructure deployed on the GCP cloud provider thanks to Terraform and gcloud 
-### Using Docker to containerize hello world application
-### Deployment hello world on GKE thanks 
+- Terraform open source infrastructure as code tool used to automate infrastructure in cloud provider
+- Using Docker to containerize hello world application
+- Deployment hello world on GKE thanks 
 
 ##### Implementation of a Gitflow to respect good practices. Creation of two branches:
 ##### The “master” branch which will be used only to deploy our application in production,
