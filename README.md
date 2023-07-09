@@ -109,24 +109,35 @@ add credentials
 All my credentials
 ![Screenshot (349)](https://github.com/carolledevops/Helloworld/assets/138341326/de79f2ea-92d4-4431-bc06-244fd75141c3)
 
-
-
-       
 ## Workflow
 CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environment have the pipeline 
 - In dev environment, we have multipipeline, I will use one pipeline
 ![Screenshot (353)](https://github.com/carolledevops/Helloworld/assets/138341326/135317d6-57d2-4b5a-a134-1c9d7af84761)
+### Explication
+Development pipeline (when pull request merged to develop branch)
 
-#####   Continuous Integration and delivery
-###### Developer makes a modification to the code and pushes it on GitHub
-##### Thanks to the webhook, the modification is received on the Jenkins server, and the build of the project can begin and a notification is sent to slack.
-##### #Syntax checks will be done (unit tests)
-##### We will have the build of the docker images and pushed on the private registry. 
-##### Deployment in a test environment (pre-production) can begin by pulling images from the private register and a notification is sent to slack.
-##### The modification validated by the development team; a PR will be carried out in order to share the modification to the Operational (Ops)
-##### After validation by the whole team, the Ops manager can make the merger request in order to pass the modification on the main branch.
-##### Deployment in production environment will then be activated and a notification is sent to slack
-##### Once the application is deployed Kubernetes cluster via ArgoCD and helm chart, a user will be able to connect and consume the application.
+1.  A pull request is merged in the develop branch
+2.  jenkins notice the change on helloworld repository via preset webhook then clone the repository.
+3.  Jenkins send build start notification on slack
+4,5 jenkins use the docker agent to launch sonarqube scannercli container to analyse the code and the scan result sent back to jenkins
+6.  Jenkins sent the build report to sonarqube to be compared with quality gate
+7.  sonarqube sent the code analysis result back to jenkins
+8.  jenkins read dockerfile to build, scan and push docker images to dockerhub
+9.  jenkins deploy helloworld application in kubernetes
+10. kubernetes pull docker images from dockerhub
+
+QA pipeline
+
+![Screenshot (354)](https://github.com/carolledevops/Helloworld/assets/138341326/8856a655-93d8-4882-8a86-693eb9edbca3)
+
+Production pipeline 
+
+![Screenshot (356)](https://github.com/carolledevops/Helloworld/assets/138341326/7717f3b5-320c-49ed-a1ba-402097ce1c24)
+
+ After validation by the whole team, the Ops manager can make the merger request in order to pass the modification on the main branch.
+ Deployment in production environment will then be activated and a notification is sent to slack
+ Once the application is deployed Kubernetes cluster, a end user will be able to connect and consume the application.
+
 
 
 
