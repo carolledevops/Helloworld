@@ -107,7 +107,7 @@ add credentials
 ![Screenshot (352)](https://github.com/carolledevops/Helloworld/assets/138341326/63f4766f-1018-4c4e-af56-422920bfa703)
 
 All my credentials
-![Screenshot (349)](https://github.com/carolledevops/Helloworld/assets/138341326/de79f2ea-92d4-4431-bc06-244fd75141c3)
+![Screenshot (357)](https://github.com/carolledevops/Helloworld/assets/138341326/bbec4ec6-e008-4aa5-b463-84428da51a7f)
 
 ## Workflow
 CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environment have the pipeline 
