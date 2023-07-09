@@ -17,31 +17,24 @@
 
   We wanted to reproduce an enterprise-type infrastructure with 3 servers and GKE
   
-  A master server Jenkins scheduling build jobs, monitor the slaves
-  A build server(slave) to build our docker images, tests, and security scan of images
-  Google Kubernetes engine to deploy our web application which can be consumed of production.
-  Sonarqube server  Static Code Analysis
+ - A master server Jenkins scheduling build jobs, monitor the slaves
+ - A build server(slave) to build our docker images, tests, and security scan of images
+ - Google Kubernetes engine to deploy our web application which can be consumed of production.
+ - Sonarqube server  Static Code Analysis
 
 ## Choice and description of tools
 
-- Terraform open source infrastructure as code tool used to automate infrastructure in cloud provider
+- Terraform  infrastructure as code tool used to automate infrastructure in cloud provider. it will help to prvision 3 servers(jenkins,nodebuild and sonarqube) and Google kubernetes Engine
 - Using Docker to containerize hello world application
-- Deployment hello world on GKE thanks 
+- Dockerhub: registry to store docker imges
+- GKE used to deploy hello world application
+- Slack collaborative platform used to notify us of the state of the pipeline
 
-##### Implementation of a Gitflow to respect good practices. Creation of two branches:
-##### The “master” branch which will be used only to deploy our application in production,
-##### The “dev” branch will be used to develop the functionalities and carry out the tests.
-##### Pull request to merge the “dev” branch on the “master” branch
-##### 	Use of Jenkins to orchestrate all stages and set up several pipelines.
-##### 	Use notification space on the Slack collaborative platform and email to notify us of the state of the pipeline.
 ## Security:
-##### Snyk Image Scanner:
-###### Identify vulnerabilities in built images (cve-
-##### Sonarqube for code quality
+- Snyk Image Scanner:
+- Identify vulnerabilities 
+- Sonarqube for code quality
        
-        
-  
-
 ## Workflow
 #####   Continuous Integration and delivery
 ###### Developer makes a modification to the code and pushes it on GitHub
