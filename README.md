@@ -1,18 +1,18 @@
  # Deployment hello world application
  
 ## Context
- #####  Deployment of hello world application through the CI / CD
+ ##### Deployment of hello world application through the CI / CD
  ##### Implementation of the security aspect
 
 ## Tools
    
-##### Cloud: GCP, (vm, gke, service account)
-##### Container Engine: Docker
-##### Source Code Management: Github
-##### Scheduling: Jenkins
-##### Security: Snyk
-##### Deployment ArgoCD, helm
-##### Notification: Slack
+- Cloud: GCP, (vm, gke, service account)
+- Container Engine: Docker
+- Source Code Management: Github
+- Scheduling: Jenkins
+- Security: Snyk
+- Deployment ArgoCD, helm
+- Notification: Slack
 
 ## Infrastructure
 
