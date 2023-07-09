@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "hello-allow-icmp" {
   name    = "hello-icmp"
-  network = google_compute_network.vpc_hello.name
+  network = data.google_compute_network.vpc-network.self_link
 
   allow {
     protocol = "icmp"
@@ -12,7 +12,7 @@ resource "google_compute_firewall" "hello-allow-icmp" {
 
 resource "google_compute_firewall" "hello-allow-ssh" {
   name    = "hello-ssh"
-  network = google_compute_network.vpc_hello.name
+  network = data.google_compute_network.vpc-network.self_link
 
 
   allow {
@@ -25,7 +25,7 @@ resource "google_compute_firewall" "hello-allow-ssh" {
 
 resource "google_compute_firewall" "hello-allow-internet" {
   name    = "hello-internet"
-  network = google_compute_network.vpc_hello.name
+  network = data.google_compute_network.vpc-network.self_link
 
 
   allow {
