@@ -38,12 +38,6 @@
 - Slack collaborative platform used to notify us of the state of the pipeline
 - SonarQube is an open-source platform developed by SonarSource for continuous inspection of code quality. SonarQube does static code analysis, which provides a detailed 
   report of bugs, code smells, vulnerabilities, code duplications.
-  
-
-## Security:
-- Snyk Image Scanner:
-- Identify vulnerabilities 
-- Sonarqube for code quality
 
 ## Installation tools
 - Install Terraform on Windows or linux:  https://www.terraform.io/downloads.html
@@ -52,12 +46,31 @@
 - Create un service account on GCP: https://cloud.google.com/iam/docs/service-accounts-create
 - install jenkins  https://www.jenkins.io/doc/book/installing/linux/
 - install sonarqube https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/
+- create snyk account https://snyk.io/
 
 ## NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
 Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
+# Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
+
 
 ## Connection of tools
+
 we need to connect the tools 
+after installing the tools, we need to connect
+jenkins: ip:8080
+sonarqube: ip:9000
+jenkins to authenticate or communicate with tools, we need to integre plugins(jenkins is collection of plugin) and provide credentials of each tools to jenkins
+plugins that we need to integrate plugins ( sonarqube scanner, slack notification, docker, snyk security plugin, gke plugin, github integration etc) integrate plugins on jenkins  go to
+## manage jenkins - plugins - available plugins and integrate the plugins that you need
+# sonarqube 
+    token: account - security - generate token
+# snyk 
+   token: account setting  - generate token
+   
+# slack
+    
+    
+    
 
 
 
