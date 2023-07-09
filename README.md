@@ -47,10 +47,11 @@
 - install jenkins  https://www.jenkins.io/doc/book/installing/linux/
 - install sonarqube https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/
 - create snyk account https://snyk.io/
+- Create dockerhub account: https://hub.docker.com/
 
-## NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
+### NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
 Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
-# Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
+### Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
 We provide service account to terraforn, it use that to authenticate to gcp and provision infrastructure
 ### network
 ![Screenshot (348)](https://github.com/carolledevops/Helloworld/assets/138341326/4e0b761d-b9fb-4f89-8d53-d7edd0005cd1)
@@ -90,12 +91,11 @@ after create your account, you provide your workspace my workspace here is devop
 ![Screenshot (342)](https://github.com/carolledevops/Helloworld/assets/138341326/75769d9f-a661-4387-8a40-ff865e23fdaf)
 ##### slack with provide token
 ![Screenshot (343)](https://github.com/carolledevops/Helloworld/assets/138341326/cab9d7c9-1267-411b-ae83-531a548e034a)
+After create Gke cluster, we will use .kube/config 
 
+All this creadendials(token, kube/config, service account, private key)  will provide to jenkins to authenticate to sonarqube to analyse the code, github clone private repository, slack to notify the team, snyk to scan docker images, dockerhub to store docker images, gcp and gke to deploy hello world application.
     
-    
-    
-
-
+![Screenshot (349)](https://github.com/carolledevops/Helloworld/assets/138341326/de79f2ea-92d4-4431-bc06-244fd75141c3)
 
 
 
