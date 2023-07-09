@@ -25,15 +25,39 @@
 ## Choice and description of tools
 
 - Terraform  infrastructure as code tool used to automate infrastructure in cloud provider. it will help to prvision 3 servers(jenkins,nodebuild and sonarqube) and Google kubernetes Engine
+- Jenkins is an open-source automation server that facilitates continuous integration (CI) and continuous delivery (CD) of software projects. It enables developers to 
+   automate various stages of the software development lifecycle, including building, testing, and deploying applications
 - Using Docker to containerize hello world application
 - Dockerhub: registry to store docker imges
 - GKE used to deploy hello world application
 - Slack collaborative platform used to notify us of the state of the pipeline
+- SonarQube is an open-source platform developed by SonarSource for continuous inspection of code quality. SonarQube does static code analysis, which provides a detailed 
+  report of bugs, code smells, vulnerabilities, code duplications.
+  
 
 ## Security:
 - Snyk Image Scanner:
 - Identify vulnerabilities 
 - Sonarqube for code quality
+
+## Installation tools
+- Install Terraform on Windows or linux:  https://www.terraform.io/downloads.html
+- Installer SDK Cloud:  https://cloud.google.com/sdk/docs/install
+- Create Google account: https://cloud.google.com/docs/get-started 
+- Create un service account on GCP: https://cloud.google.com/iam/docs/service-accounts-create
+- install jenkins  https://www.jenkins.io/doc/book/installing/linux/
+- install sonarqube https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/
+
+## NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
+Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
+
+## Connection of tools
+we need to connect the tools 
+
+
+
+
+
        
 ## Workflow
 #####   Continuous Integration and delivery
@@ -47,20 +71,7 @@
 ##### Deployment in production environment will then be activated and a notification is sent to slack
 ##### Once the application is deployed Kubernetes cluster via ArgoCD and helm chart, a user will be able to connect and consume the application.
 
-## Installation tools
- #####   Install Terraform on Windows:  https://www.terraform.io/downloads.html
- ##### Installer le SDK Cloud:  https://cloud.google.com/sdk/docs/install
- ##### Create Google account: https://cloud.google.com/docs/get-started 
- ##### Create un service account on GCP: https://cloud.google.com/iam/docs/service-accounts-create
 
-## NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
-Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
-best practise
-   one server jenkins controller
-   second server to execute the job
-using Gcloud to provision GKE in GCP.
-##### install jenkins  https://www.jenkins.io/doc/book/installing/linux/
-##### install argocd https://argo-cd.readthedocs.io/en/stable/operator-manual/installation/
 
 
 
