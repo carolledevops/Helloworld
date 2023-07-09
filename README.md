@@ -51,6 +51,7 @@
 ## NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
 Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
 # Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
+We provide service account to terraforn, it use that to authenticate to gcp and provision infrastructure
 ### network
 ![Screenshot (348)](https://github.com/carolledevops/Helloworld/assets/138341326/4e0b761d-b9fb-4f89-8d53-d7edd0005cd1)
 ### cluster gke
@@ -66,8 +67,9 @@ sonarqube: ip:9000
 jenkins to authenticate or communicate with tools, we need to integre plugins(jenkins is collection of plugin) and provide credentials of each tools to jenkins
 plugins that we need to integrate plugins ( sonarqube scanner, slack notification, docker, snyk security plugin, gke plugin, github integration etc) integrate plugins on jenkins  go to
 ## manage jenkins - plugins - available plugins and integrate the plugins that you need
+### Now we need to generate token
 # sonarqube 
-    token: account - security - generate token
+    go to  account - security - generate token
 # snyk 
  we need to generate token: 
  #### account setting  
@@ -75,11 +77,18 @@ plugins that we need to integrate plugins ( sonarqube scanner, slack notificatio
 #### generate token
 ![Screenshot (345)](https://github.com/carolledevops/Helloworld/assets/138341326/fa4281a8-fbfe-4f9d-9cfe-14656d257520)
 
-# slack
+# slack( generate token)
+after create your account, you provide your workspace my workspace here is devops and that workspace, create your channel mine is #develop
+ on devops, you select 
+##### settings $ administration - manage app
 ![Screenshot (339)](https://github.com/carolledevops/Helloworld/assets/138341326/70248cc8-b125-487c-9f4a-52293be49818)
+##### put the apps jenkins
 ![Screenshot (340)](https://github.com/carolledevops/Helloworld/assets/138341326/88f51941-777b-4bf9-863c-0fe5dcfcd842)
+##### click on add jenkins
 ![Screenshot (341)](https://github.com/carolledevops/Helloworld/assets/138341326/ea13c1fe-bd2b-458c-810f-ddf364814b10)
+##### select your channel
 ![Screenshot (342)](https://github.com/carolledevops/Helloworld/assets/138341326/75769d9f-a661-4387-8a40-ff865e23fdaf)
+##### slack with provide token
 ![Screenshot (343)](https://github.com/carolledevops/Helloworld/assets/138341326/cab9d7c9-1267-411b-ae83-531a548e034a)
 
     
