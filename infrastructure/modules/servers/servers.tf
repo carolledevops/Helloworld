@@ -15,12 +15,12 @@ resource "google_compute_instance" "hello_jenkins" {
 
   boot_disk {
     initialize_params {
-      image = var.image[0]
+      image = var.image
     }
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.hello_subnet.name
+    subnetwork = data.google_compute_subnetwork.subnetwork.self_link
     access_config {
       nat_ip = google_compute_address.jenkins.address
     }
@@ -35,13 +35,12 @@ resource "google_compute_instance" "hello_sonar" {
 
   boot_disk {
     initialize_params {
-      image = var.image[1]
+      image = var.image
     }
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.hello_subnet.name
-
+    subnetwork = data.google_compute_subnetwork.subnetwork.self_link
     access_config {
       nat_ip = google_compute_address.sonar.address
     }
