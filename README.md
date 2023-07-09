@@ -94,18 +94,18 @@ After create Gke cluster, we will use .kube/config
 
 All this creadendials(token, kube/config, service account, private key)  will provide to jenkins to authenticate to sonarqube to analyse the code, github clone private repository, slack to notify the team, snyk to scan docker images, dockerhub to store docker images, gcp and gke to deploy hello world application.
 provide all that credentials: go to manage plugins- manage credentials
-Manage jenkins
+##### Manage jenkins
 ![Screenshot (350)](https://github.com/carolledevops/Helloworld/assets/138341326/cc26a74c-dbd8-4da6-a30a-6c813c6e5cc7)
 
-Click on manage credentials
+##### Click on manage credentials
 
 ![Screenshot (351)](https://github.com/carolledevops/Helloworld/assets/138341326/6113de12-4947-426e-a3cc-c30d9463a178)
 
-add credentials
+##### add credentials
 
 ![Screenshot (352)](https://github.com/carolledevops/Helloworld/assets/138341326/63f4766f-1018-4c4e-af56-422920bfa703)
 
-All my credentials
+##### All my credentials
 ![Screenshot (357)](https://github.com/carolledevops/Helloworld/assets/138341326/bbec4ec6-e008-4aa5-b463-84428da51a7f)
 
 After add the credentials
