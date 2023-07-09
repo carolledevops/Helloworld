@@ -109,6 +109,18 @@ add credentials
 All my credentials
 ![Screenshot (357)](https://github.com/carolledevops/Helloworld/assets/138341326/bbec4ec6-e008-4aa5-b463-84428da51a7f)
 
+After add the credentials
+we need to go in global tools configuration to set java, SonarQube Scanner and snyk
+##### manage jenkins - global tools configuration - java
+![Screenshot (360)](https://github.com/carolledevops/Helloworld/assets/138341326/270c3d48-7841-49d7-860c-b5f1f3c3390f)
+
+##### manage jenkins - global tools configuration - sonarqube
+ ![Screenshot (359)](https://github.com/carolledevops/Helloworld/assets/138341326/9bbb7003-d3fb-4bb0-ae81-441bd504faeb)
+
+##### manage jenkins - global tools configuration - snyk
+ ![Screenshot (358)](https://github.com/carolledevops/Helloworld/assets/138341326/06e5c005-df14-4733-9090-2006088dd829)
+Configure systems
+
 ## Workflow
 CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environment have the pipeline 
 - In dev environment, we have multipipeline, I will use one pipeline
@@ -134,9 +146,9 @@ Production pipeline
 
 ![Screenshot (356)](https://github.com/carolledevops/Helloworld/assets/138341326/7717f3b5-320c-49ed-a1ba-402097ce1c24)
 
- After validation by the whole team, the Ops manager can make the merger request in order to pass the modification on the main branch.
- Deployment in production environment will then be activated and a notification is sent to slack
- Once the application is deployed Kubernetes cluster, a end user will be able to connect and consume the application.
+ - After validation by the whole team, the Ops manager can make the merger request in order to pass the modification on the main branch.
+ - Deployment in production environment will then be activated and a notification is sent to slack
+ - Once the application is deployed Kubernetes cluster, a end user will be able to connect and consume the application.
 
 
 
