@@ -1,9 +1,8 @@
-# Deployment hello world application
+# Deployment of hello world application
  
 ## Context
- ##### Deployment hello world application through the CI / CD
- ##### Implementation of the security 
-
+ ##### Deployment of hello world application through the CI/CD Pipeline with implementation of security
+ 
 ## Tools
    
 - Cloud: GCP, (vm, gke, service account)
