@@ -137,7 +137,7 @@ Configure jenkins and github via webhook(webhook is a trigger that use to notifi
 
   On Payload URL, put "http://ip(ip for jenkins):port/github-webhook" 
   mine is 
-  [Screenshot (364)](https://github.com/carolledevops/Helloworld/assets/138341326/63a2c8e0-e979-45b3-b4e7-185fba214345)
+ ![Screenshot (364)](https://github.com/carolledevops/Helloworld/assets/138341326/63a2c8e0-e979-45b3-b4e7-185fba214345)
 
 ## Workflow
 CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environment have the pipeline 
