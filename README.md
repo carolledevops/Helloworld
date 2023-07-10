@@ -179,7 +179,7 @@ Helloworld application
 
 list of development tasks that would be useful for enhancing a codebase or solution:
 
-##### Unit testing imlement units to verify the correctness 
+##### Unit testing imlement unit test to verify the correctness 
 ##### Monitoring tools can help you track the health, performance, and availability of your systems.Example Datadog, promethus and grafana
 ##### Argo CD is an open-source continuous delivery (CD) tool designed to automate and manage the deployment of applications to Kubernetes clusters. It have many features
 - Rollbacks and Versioning
