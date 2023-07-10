@@ -126,15 +126,15 @@ we need to go in configure systems to set slack, SonarQube server
 ##### manage jenkins - configur systems - slack
 ![Screenshot (362)](https://github.com/carolledevops/Helloworld/assets/138341326/c9f65adb-73a1-43ef-ae7b-0a28ec2853d2)
 
-Configure jenkins and github via webhook(webhook is a trigger that use to notifie jenkins everytime we merge PR(Pull Request)
- Go to github - click on your repository - settings - webhook
+##### Configure jenkins and github via webhook(webhook is a trigger that use to notify jenkins everytime we merge PR(Pull Request),
+##### Go to github - click on your repository - settings - webhook
 
  ![Screenshot (363)](https://github.com/carolledevops/Helloworld/assets/138341326/d4c69177-1f65-472c-ada0-5b6423aab145)
 
- click on it and choose add webhook
+ ##### click on it and choose add webhook
  ![Screenshot (365)](https://github.com/carolledevops/Helloworld/assets/138341326/539051a0-2796-4d3a-a9e3-40f1abeae160)
 
-  On Payload URL, put "http://ip(ip for jenkins):port/github-webhook" 
+  ##### On Payload URL, put "http://ip(ip for jenkins):port/github-webhook" 
   mine is 
  ![Screenshot (364)](https://github.com/carolledevops/Helloworld/assets/138341326/63a2c8e0-e979-45b3-b4e7-185fba214345)
 
