@@ -48,7 +48,7 @@
 - create snyk account https://snyk.io/
 - Create dockerhub account: https://hub.docker.com/
 
-### NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources.
+### NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources and in google cloud platform, we create a project, enable the bill, link to that project and whatever we want to create, we need to enable the API(enable API for compute engine, kubernetes engine etc)
 Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
 ### Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
 We provide service account to terraforn, it use that to authenticate to gcp and provision infrastructure
@@ -144,7 +144,7 @@ CI/CD pipeleine, we have 4 environments(dev, qa, prepro,pro) and each environmen
 - In dev environment, we have multipipeline, I will use one pipeline
 ![Screenshot (353)](https://github.com/carolledevops/Helloworld/assets/138341326/135317d6-57d2-4b5a-a134-1c9d7af84761)
 ### Explication
-Development pipeline (when pull request merged to develop branch)
+##### Development pipeline (when pull request merged to develop branch)
 
 1.  A pull request is merged in the develop branch
 2.  jenkins notice the change on helloworld repository via preset webhook then clone the repository.
@@ -156,11 +156,13 @@ Development pipeline (when pull request merged to develop branch)
 9.  jenkins deploy helloworld application in kubernetes
 10. kubernetes pull docker images from dockerhub
 
-QA pipeline
+##### QA pipeline
 
 ![Screenshot (354)](https://github.com/carolledevops/Helloworld/assets/138341326/8856a655-93d8-4882-8a86-693eb9edbca3)
 
-Production pipeline 
+pipeline for qa will capable to take as input  docker image and perform differents test(load test, functional test etc)
+
+##### Production pipeline 
 
 ![Screenshot (356)](https://github.com/carolledevops/Helloworld/assets/138341326/7717f3b5-320c-49ed-a1ba-402097ce1c24)
 
