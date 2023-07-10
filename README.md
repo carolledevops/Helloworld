@@ -50,9 +50,9 @@
 - create snyk account https://snyk.io/
 - Create dockerhub account: https://hub.docker.com/
 
-### NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources and in google cloud platform, we create a project, enable the bill, link to that project and whatever we want to create, we need to enable the API(enable API for compute engine, kubernetes engine etc)
-Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
-### Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
+##### NB: After creating a service account, you will download a .json file necessary for any application (terraform, Gcloud) connected to your account to deploy the resources and in google cloud platform, we create a project, enable the bill, link to that project and whatever we want to create, we need to enable the API(enable API for compute engine, kubernetes engine etc)
+##### Using terraform to provision resource in GCP compute network, subnetwork, firewall and two compute instances
+##### Automate infrastructure with terraform (Jenkins and sonarqube server, gke) the code is here  https://github.com/carolledevops/Helloworld.git
 We provide service account to terraforn, it use that to authenticate to gcp and provision infrastructure
 ### network
 ![Screenshot (348)](https://github.com/carolledevops/Helloworld/assets/138341326/4e0b761d-b9fb-4f89-8d53-d7edd0005cd1)
