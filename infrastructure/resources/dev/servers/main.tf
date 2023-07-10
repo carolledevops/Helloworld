@@ -27,13 +27,14 @@ locals {
   sonar_address   = "sonar"
   instance_name   = [
     "jenkins",
+    "buildnode",
     "sonarqube"
   ]
   image           = "centos-cloud/centos-7"
 }
 
 module "gke" {
-  source          = "../../modules/servers"
+  source          = "../../../modules/servers"
   project_id      = local.project_id
   region          = local.region
   zone            = local.zone

@@ -17,6 +17,8 @@ variable "jenkins_address" {
   type    = string
   default = "jenkins"
 }
+
+
 variable "sonar_address" {
   type    = string
   default = "sonar"
@@ -34,6 +36,7 @@ variable "instance_name" {
   type = list(any)
   default = [
     "jenkins",
+    "buildnode",
     "sonarqube"
   ]
 }

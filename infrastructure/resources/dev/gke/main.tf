@@ -1,7 +1,7 @@
 provider "google" {
   project     = local.project_id
   region      = local.region
-  credentials = "hello-392203-d50cd02c95eb.json"
+  credentials = ""
 }
 
 provider "kubernetes" {
@@ -21,7 +21,7 @@ terraform {
   backend "gcs" {
     bucket      = "filel_ock"
     prefix      = "gke/tfstate"
-    credentials = "hello-392203-d50cd02c95eb.json"
+    credentials = ""
   }
 }
 locals {
@@ -31,20 +31,18 @@ locals {
   zone            = "us-central1-a"
   machine_type    = "e2-small"
   team            = "devops"
-  min_node_count  = 1
-  max_node_count  = 3
+  
   
 }
 
 module "gke" {
-  source          = "../../modules/gke"
+  source          = "../../../modules/gke"
   project_id      = local.project_id
   region          = local.region
   cluster_name    = local.cluster_name
   zone            = local.zone
   machine_type    = local.machine_type
   team            = local.team
-  min_node_count  = local.min_node_count
-  max_node_count  = local.max_node_count
+ 
   
 }
