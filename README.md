@@ -63,12 +63,12 @@ We provide service account to terraforn, it use that to authenticate to gcp and 
 ## Connection of tools
 
 we need to connect the tools 
-after installing the tools, we need to connect
-jenkins: ip:8080
-sonarqube: ip:9000
-jenkins to authenticate or communicate with tools, we need to integre plugins(jenkins is collection of plugin) and provide credentials of each tools to jenkins
-plugins that we need to integrate plugins ( sonarqube scanner, slack notification, docker, snyk security plugin, gke plugin, github integration etc) integrate plugins on jenkins  go to
-## manage jenkins - plugins - available plugins and integrate the plugins that you need
+- after installing the tools, we need to connect
+- jenkins: ip:8080
+- sonarqube: ip:9000
+jenkins to authenticate or communicate with tools, we need to integre plugins(jenkins is collection of plugin) and provide credentials of each tools.
+Plugins that we need to integrate( sonarqube scanner, slack notification, docker, snyk security plugin, gke plugin, github integration, kubernetes etc) 
+## manage jenkins - plugins - available plugins and integrate the plugins that we need
 ### Now we need to generate token
 # sonarqube 
     go to  account - security - generate token
@@ -82,15 +82,15 @@ plugins that we need to integrate plugins ( sonarqube scanner, slack notificatio
 # slack( generate token)
 after create your account, you provide your workspace my workspace here is devops and that workspace, create your channel mine is #develop
  on devops, you select 
-##### settings $ administration - manage app
+#####  Settings & administration - manage app
 ![Screenshot (339)](https://github.com/carolledevops/Helloworld/assets/138341326/70248cc8-b125-487c-9f4a-52293be49818)
-##### put the apps jenkins
+##### put the apps jenkinsci
 ![Screenshot (340)](https://github.com/carolledevops/Helloworld/assets/138341326/88f51941-777b-4bf9-863c-0fe5dcfcd842)
 ##### click on add jenkins
 ![Screenshot (341)](https://github.com/carolledevops/Helloworld/assets/138341326/ea13c1fe-bd2b-458c-810f-ddf364814b10)
 ##### select your channel
 ![Screenshot (342)](https://github.com/carolledevops/Helloworld/assets/138341326/75769d9f-a661-4387-8a40-ff865e23fdaf)
-##### slack with provide token
+##### slack will provide token
 ![Screenshot (343)](https://github.com/carolledevops/Helloworld/assets/138341326/cab9d7c9-1267-411b-ae83-531a548e034a)
 
 
