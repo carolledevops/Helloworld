@@ -11,15 +11,17 @@
 - Scheduling: Jenkins
 - Security: Snyk, Sonarqube
 - Notification: Slack
+- gcloud
 
 ## Infrastructure
 
   We wanted to reproduce an enterprise-type infrastructure with 3 servers and GKE
   
  - A master server Jenkins scheduling build jobs, monitor the slaves
- - A build server(slave) to build our docker images, tests, and security scan of images
+ - A build server(slave) to build our docker images, tests, and  scan  images
  - Google Kubernetes engine to deploy our web application which can be consumed of production.
- - Sonarqube server  Static Code Analysis
+ - Sonarqube server: Static Code Analysis
+ - Snyk: scan docker images
 
 ## Choice and description of tools
 
@@ -169,6 +171,8 @@ pipeline for qa will capable to take as input  docker image and perform differen
  - After validation by the whole team, the Ops manager can make the merger request in order to pass the modification on the main branch.
  - Deployment in production environment will then be activated and a notification is sent to slack
  - Once the application is deployed Kubernetes cluster, a end user will be able to connect and consume the application.
+
+
 
 
 
