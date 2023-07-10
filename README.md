@@ -58,8 +58,8 @@ We provide service account to terraforn, it use that to authenticate to gcp and 
 ![Screenshot (348)](https://github.com/carolledevops/Helloworld/assets/138341326/4e0b761d-b9fb-4f89-8d53-d7edd0005cd1)
 ### cluster gke
 ![Screenshot (346)](https://github.com/carolledevops/Helloworld/assets/138341326/f7c3df53-a58b-4d04-9f70-186976d7bce8)
-### servers
-![Screenshot (347)](https://github.com/carolledevops/Helloworld/assets/138341326/62e645d3-5d31-4831-be5a-5ff908dc0713)
+### servers and one worker node
+![Screenshot (368)](https://github.com/carolledevops/Helloworld/assets/138341326/18f0a8e6-8f55-48ab-9630-95ffcd80a51c)
 ## Connection of tools
 
 we need to connect the tools 
