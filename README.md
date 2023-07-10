@@ -92,20 +92,21 @@ after create your account, you provide your workspace my workspace here is devop
 ![Screenshot (342)](https://github.com/carolledevops/Helloworld/assets/138341326/75769d9f-a661-4387-8a40-ff865e23fdaf)
 ##### slack with provide token
 ![Screenshot (343)](https://github.com/carolledevops/Helloworld/assets/138341326/cab9d7c9-1267-411b-ae83-531a548e034a)
-After create Gke cluster, we will use .kube/config 
+
 
 All this creadendials(token, kube/config, service account, private key)  will provide to jenkins to authenticate to sonarqube to analyse the code, github clone private repository, slack to notify the team, snyk to scan docker images, dockerhub to store docker images, gcp and gke to deploy hello world application.
 provide all that credentials: go to manage plugins- manage credentials
+
 ##### Manage jenkins
 ![Screenshot (350)](https://github.com/carolledevops/Helloworld/assets/138341326/cc26a74c-dbd8-4da6-a30a-6c813c6e5cc7)
 
-##### Click on manage credentials
+##### Click on credentials
 
-![Screenshot (351)](https://github.com/carolledevops/Helloworld/assets/138341326/6113de12-4947-426e-a3cc-c30d9463a178)
+![Screenshot (351)](https://github.com/carolledevops/Helloworld/assets/138341326/f78de2be-cca7-40d7-bf33-174384caa1cf)
 
 ##### add credentials
 
-![Screenshot (352)](https://github.com/carolledevops/Helloworld/assets/138341326/63f4766f-1018-4c4e-af56-422920bfa703)
+![Screenshot (352)](https://github.com/carolledevops/Helloworld/assets/138341326/d77a77f1-60e8-465e-babc-68607a9e1796)
 
 ##### All my credentials
 ![Screenshot (357)](https://github.com/carolledevops/Helloworld/assets/138341326/bbec4ec6-e008-4aa5-b463-84428da51a7f)
