@@ -65,7 +65,8 @@ We provide service account to terraforn, it use that to authenticate to gcp and 
 we need to connect the tools 
 - after installing the tools, we need to connect
 - jenkins: ip:8080
-- sonarqube: ip:9000
+- sonarqube: ip:9000.
+
 jenkins to authenticate or communicate with tools, we need to integre plugins(jenkins is collection of plugin) and provide credentials of each tools.
 Plugins that we need to integrate( sonarqube scanner, slack notification, docker, snyk security plugin, gke plugin, github integration, kubernetes etc) 
 ## manage jenkins - plugins - available plugins and integrate the plugins that we need
