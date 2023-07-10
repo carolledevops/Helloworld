@@ -1,7 +1,7 @@
 provider "google" {
   project     = local.project_id
   region      = local.region
-  credentials = "hello-392203-d50cd02c95eb.json"
+  credentials = ""
 }
 
 terraform {
@@ -14,7 +14,7 @@ terraform {
   backend "gcs" {
     bucket      = "filel_ock"
     prefix      = "vpc/tfstate"
-    credentials = "hello-392203-d50cd02c95eb.json"
+    credentials = ""
   }
 }
 locals {
@@ -29,7 +29,7 @@ locals {
 }
 
 module "vpc" {
-  source          = "../../modules/network"
+  source          = "../../../modules/network"
   project_id      = local.project_id
   region          = local.region
   vpc_name        = local.vpc_name

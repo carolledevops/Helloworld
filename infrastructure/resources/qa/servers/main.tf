@@ -1,7 +1,7 @@
 provider "google" {
   project     = local.project_id
   region      = local.region
-  credentials = "hello-392203-d50cd02c95eb.json"
+  credentials = ""
 }
 
 
@@ -15,7 +15,7 @@ terraform {
   backend "gcs" {
     bucket      = "filel_ock"
     prefix      = "servers/tfstate"
-    credentials = "hello-392203-d50cd02c95eb.json"
+    credentials = ""
   }
 }
 locals {
@@ -27,13 +27,14 @@ locals {
   sonar_address   = "sonar"
   instance_name   = [
     "jenkins",
+    "buildnode",
     "sonarqube"
   ]
   image           = "centos-cloud/centos-7"
 }
 
 module "gke" {
-  source          = "../../modules/servers"
+  source          = "../../../modules/servers"
   project_id      = local.project_id
   region          = local.region
   zone            = local.zone
