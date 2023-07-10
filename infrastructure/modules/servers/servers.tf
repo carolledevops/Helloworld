@@ -3,6 +3,7 @@ resource "google_compute_address" "jenkins" {
   name = var.jenkins_address
 }
 
+
 resource "google_compute_address" "sonar" {
   name = var.sonar_address
 }
@@ -27,9 +28,25 @@ resource "google_compute_instance" "hello_jenkins" {
   }
 }
 
+resource "google_compute_instance" "build_node" {
+  name         = var.instance_name[1]
+  machine_type = var.machine_type
+  zone         = var.zone
+
+  boot_disk {
+    initialize_params {
+      image = var.image
+    }
+  }
+
+  network_interface {
+    subnetwork = data.google_compute_subnetwork.subnetwork.self_link
+  }
+}
+
 
 resource "google_compute_instance" "hello_sonar" {
-  name         = var.instance_name[1]
+  name         = var.instance_name[2]
   machine_type = var.machine_type
   zone         = var.zone
 

@@ -25,7 +25,7 @@ pipeline {
          }
             agent {
                 docker {
-                  image 'sonarsource/sonar-scanner-cli:4.7.0'
+                  image 'sonarsource/sonar-scanner-cli:4.8.0'
                 }
                }
                environment {
@@ -45,7 +45,7 @@ pipeline {
         }
         steps {
             script {
-               sh ' docker build --no-cache -f code-application/Dockerfile -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG ./code-application/ '
+               sh ' docker build -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG . '
             }
         }
      }
@@ -54,15 +54,17 @@ pipeline {
           expression { GIT_BRANCH == 'origin/dev' }
         }
       environment{
-          SNYK_TOKEN = credentials('snyktoken')
+          SNYK_TOKEN = credentials('SNYK')
        }
        steps{
+        script {
          sh '''
           echo "starting image scan ..."
-           SCAN_RESULT-$(docker run --rm -e $SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/app snyk/snyk:docker snyk test --docker ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG --json
-            echo"scan ended"
+          SCAN_RESULT=$(docker run --rm -e $SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/app snyk/snyk:docker snyk test --docker ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG --json || if [[$? -gt "1"]]; then echo -e "warning; you must see scan result \n"; false; elif [[$? -eq "0"]]; then echo "pass: Nothing to do"; elif [[$? -eq "1"]]; then echo "warning" passing with something to do; else false; fi)
+          echo"scan ended"
          '''
         }
+       }
     }
     stage('push docker image') {
      when {
@@ -74,6 +76,16 @@ pipeline {
              }
           }
      }
+    stage("Deploy app in testing Environment") {
+        when {
+          expression { GIT_BRANCH == 'origin/dev' }
+            }
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'gke_credential', namespace: '', serverUrl: '') {
+                 sh "kubectl apply -f deployment.yml"
+                }
+            }
+        }
     stage("Deploy app in Pre-production Environment") {
         when {
           expression { GIT_BRANCH == 'origin/dev' }
@@ -85,7 +97,6 @@ pipeline {
             }
         }
 	     
-      
     stage("Deploy app in production Environment") {
        when {
           expression { GIT_BRANCH == 'origin/main' }
@@ -96,13 +107,6 @@ pipeline {
                 }
             }
           }
-      post {
-    always {
-      script {
-        notifyUpgrade(currentBuild.currentResult, "POST")
-      }
-    } 
-  }    
  }
 }
    

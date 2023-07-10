@@ -13,10 +13,6 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   name    = "${google_container_cluster.primary.name}-node-pool"
   cluster = google_container_cluster.primary.id
    
-  autoscaling {
-    min_node_count = var.min_node_count
-    max_node_count = var.max_node_count
-  }
   node_config {
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
