@@ -169,9 +169,30 @@ pipeline for qa will capable to take as input  docker image and perform differen
  - Deployment in production environment will then be activated and a notification is sent to slack
  - Once the application is deployed Kubernetes cluster, a end user will be able to connect and consume the application.
 
+Helloworld application
+![Screenshot (366)](https://github.com/carolledevops/Helloworld/assets/138341326/87df55b1-5882-4ab0-bf8e-6f2a37952488)
 
 
 
+
+
+list of development tasks that would be useful for enhancing a codebase or solution:
+
+##### Unit testing imlement units to verify the correctness 
+##### Monitoring tools can help you track the health, performance, and availability of your systems.Example Datadog, promethus and grafana
+##### Argo CD is an open-source continuous delivery (CD) tool designed to automate and manage the deployment of applications to Kubernetes clusters. It have many features
+- Rollbacks and Versioning
+- Multi-Environment Deployments
+- Application Sync
+- Integration with CI/CD
+- RBAC and Access Control
+- Web UI and CLI
+##### PagerDuty incident management and response platform. It provides real-time alerts, on-call scheduling, and incident response coordination.  some features 
+Integration with Monitoring and Communication Tools
+- On-Call Schedules
+- Incident Response Workflows
+##### Helm package manager for Kubernetes that simplifies the deployment and management of applications and services.
+Helm simplifies the management of Kubernetes deployments by providing a consistent and reusable approach. It enables developers and operators to package and distribute applications as charts, facilitating consistent and scalable deployments across different environments.
 
 
 
