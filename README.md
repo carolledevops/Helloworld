@@ -116,16 +116,12 @@ we need to go in global tools configuration to set java, SonarQube Scanner and s
 ##### manage jenkins - global tools configuration - java
 ![Screenshot (360)](https://github.com/carolledevops/Helloworld/assets/138341326/270c3d48-7841-49d7-860c-b5f1f3c3390f)
 
-##### manage jenkins - global tools configuration - sonarqube
- ![Screenshot (359)](https://github.com/carolledevops/Helloworld/assets/138341326/9bbb7003-d3fb-4bb0-ae81-441bd504faeb)
-
 ##### manage jenkins - global tools configuration - snyk
  ![Screenshot (358)](https://github.com/carolledevops/Helloworld/assets/138341326/06e5c005-df14-4733-9090-2006088dd829)
  
 ##### Configure systems
 we need to go in configure systems to set slack, SonarQube server
 ##### manage jenkins - configur systems -sonarqube server
-![Screenshot (361)](https://github.com/carolledevops/Helloworld/assets/138341326/0396a770-7c85-4c21-8002-0c3af8144473)
 
 ##### manage jenkins - configur systems - slack
 ![Screenshot (362)](https://github.com/carolledevops/Helloworld/assets/138341326/c9f65adb-73a1-43ef-ae7b-0a28ec2853d2)
